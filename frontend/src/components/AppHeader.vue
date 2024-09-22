@@ -14,49 +14,20 @@
         Сейчас на сайте:
         <span class="header_connection-count">{{ connectionCount }}</span>
       </div>
-      <div class="header_date">
-        <div class="header_weekDay">
-          {{ getWeekDay }}
-        </div>
-        <div class="header_date-time">
-          <span> {{ getDate }}</span>
-
-          <span v-if="hour">
-            <clock-icon class="header_time_icon" /><span
-              >{{ hour }}:{{ min }}</span
-            ></span
-          >
-        </div>
-      </div>
+      <top-menu />
     </div>
   </nav>
 </template>
 
 <script>
 import { io } from "socket.io-client";
-import { monthNameShort } from "../helpers/date.js";
-const {
-  format,
-  getMonth,
-  getDate,
-  getYear,
-  getHours,
-  getMinutes,
-} = require("date-fns");
-import { ru } from "date-fns/locale";
 
-import ClockIcon from "../assets/icons/ClockIcon";
+import { TopMenu } from "@/components/reusable/index";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
 export default {
   name: "AppHeader",
-  components: { ClockIcon },
-  data() {
-    return {
-      hour: null,
-      min: null,
-    };
-  },
+  components: { TopMenu },
 
   setup() {
     const socket = io.connect(process.env.VUE_APP_SERVER_URL);
@@ -86,28 +57,6 @@ export default {
       connectionCount,
     };
   },
-  beforeCreate() {
-    setInterval(() => {
-      const date = Date.now();
-      const hour = getHours(date);
-      const min = getMinutes(date);
-      this.hour = hour;
-      this.min = min;
-    }, 1000);
-  },
-  computed: {
-    getWeekDay() {
-      return format(Date.now(), "EEEE", { locale: ru });
-    },
-    getDate() {
-      const date = Date.now();
-      const month = monthNameShort[getMonth(date)];
-      const day = getDate(date);
-      const year = getYear(date);
-
-      return `${day} ${month}, ${year}`;
-    },
-  },
 };
 </script>
 
@@ -126,34 +75,6 @@ export default {
 
   &_connection-count {
     font-weight: 700;
-  }
-
-  &_date {
-    font-size: 0.75rem;
-    font-weight: 500;
-
-    &-time {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-
-      & > span {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-
-  &_time_icon {
-    width: .875rem;
-    height: .875rem;
-    margin-right: .25rem;
-  }
-
-  &_weekDay {
-    text-transform: capitalize;
   }
 }
 

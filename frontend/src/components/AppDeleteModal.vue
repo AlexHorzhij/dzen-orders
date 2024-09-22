@@ -10,7 +10,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Удаление</h1>
             <button
               type="button"
               class="btn-close"
@@ -55,4 +55,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h1 {
+  font-weight: 600;
+  color: red;
+}
+
+h2 {
+  font-weight: 600;
+}
+</style>
