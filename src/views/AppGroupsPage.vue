@@ -51,12 +51,14 @@ export default {
   created() {
     this.orders = this.$store.state.orders;
     this.products = this.$store.state.products;
-    this.currentOrder = this.orders[0].id;
 
-    this.router.push({
-      name: "group_products",
-      params: { id: this.currentOrder },
-    });
+    if (this.orders.length) {
+      this.currentOrder = this.orders[0].id;
+      this.router.push({
+        name: "group_products",
+        params: { id: this.currentOrder },
+      });
+    }
   },
 };
 </script>

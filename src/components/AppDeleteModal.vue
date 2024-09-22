@@ -2,15 +2,15 @@
   <div>
     <div
       class="modal fade"
-      id="exampleModal"
+      id="deleteModal"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="deleteModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Удаление</h1>
+            <h1 class="modal-title fs-5" id="deleteModalLabel">Удаление</h1>
             <button
               type="button"
               class="btn-close"

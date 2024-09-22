@@ -31,9 +31,8 @@
         </div>
       </div>
     </div>
-    <!-- <button @click="removeOrder(order.id)">REMOVE</button> -->
     <div class="order-card_delete-btn">
-      <delete-button />
+      <delete-button data-bs-toggle="modal" data-bs-target="#deleteModal" />
     </div>
   </div>
 </template>

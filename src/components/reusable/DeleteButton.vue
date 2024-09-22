@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="delete_btn"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-  >
+  <button class="delete_btn">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
