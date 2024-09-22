@@ -31,6 +31,7 @@ export default {
   props: {
     id: String,
   },
+
   computed: {
     getProducts() {
       const allOrders = this.$store.state.orders;

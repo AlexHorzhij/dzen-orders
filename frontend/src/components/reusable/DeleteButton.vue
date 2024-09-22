@@ -39,8 +39,9 @@ export default {};
 
   &:hover,
   &:focus {
-    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-      0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    box-shadow: inset 0.0625rem 0 0 #dadce0, inset -0.0625rem 0 0 #dadce0,
+      0 0.0625rem 0.125rem 0 rgba(60, 64, 67, 0.3),
+      0 0.0625rem 0.1875rem 0.0625rem rgba(60, 64, 67, 0.15);
     transform: scale(1.1);
   }
 }

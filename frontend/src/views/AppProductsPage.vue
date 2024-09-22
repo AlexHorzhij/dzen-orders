@@ -114,18 +114,18 @@ export default {
 
   &_header {
     display: flex;
-    gap: 40px;
+    gap: 2.5rem;
   }
 
   & .form-group {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem;
   }
 }
 
 form {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 </style>

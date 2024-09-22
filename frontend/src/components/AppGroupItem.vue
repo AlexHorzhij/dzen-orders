@@ -16,18 +16,25 @@
         {{ transformDateWithMonth(order.date) }}
       </div>
     </div>
+    <div class="group-card_show-product_wrapper">
+      <div v-if="currentOrder === order.id" class="group-card_show-product">
+        <arrow-icon />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { getDateWithTextMonth } from "@/helpers/getDate";
 import ListIcon from "@/assets/icons/ListIcon.vue";
+import { ArrowIcon } from "@/assets/icons";
 
 export default {
   name: "AppGroupItem",
-  components: { ListIcon },
+  components: { ListIcon, ArrowIcon },
   props: {
     order: Object,
+    currentOrder: Number,
   },
 
   methods: {
@@ -46,8 +53,9 @@ export default {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 350px;
-  padding: 0 1rem;
+  width: 21.875rem;
+  padding: 0 0 0 1rem;
+  border-radius: 0.25rem;
   background: $white;
   color: $secondary_text;
   cursor: pointer;
@@ -56,8 +64,8 @@ export default {
   border-bottom: 0.0625rem solid $secondary_color;
 
   &:hover {
-    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-      0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    box-shadow: inset .0625rem 0 0 #dadce0, inset -0.0625rem 0 0 #dadce0,
+      0 .0625rem .125rem 0 rgba(60, 64, 67, 0.3), 0 .0625rem .1875rem .0625rem rgba(60, 64, 67, 0.15);
   }
 
   &_item {
@@ -91,9 +99,9 @@ export default {
         border-radius: 0.25rem;
         z-index: 100;
 
-        box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-          0 1px 2px 0 rgba(60, 64, 67, 0.3),
-          0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        box-shadow: inset .0625rem 0 0 #dadce0, inset -0.0625rem 0 0 #dadce0,
+          0 .0625rem .125rem 0 rgba(60, 64, 67, 0.3),
+          0 .0625rem .1875rem .0625rem rgba(60, 64, 67, 0.15);
       }
     }
   }
@@ -113,8 +121,8 @@ export default {
     }
 
     &-icon {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
       fill: $black;
     }
     &-products {
@@ -123,10 +131,10 @@ export default {
       align-items: center;
     }
     &-number {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
     &-text {
-      font-size: 12px;
+      font-size: .75rem;
     }
   }
 
@@ -135,30 +143,22 @@ export default {
     width: 9.375rem;
   }
 
-  &_is-new {
-    width: 6.25rem;
-  }
+  &_show-product {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $secondary_color;
 
-  &_price {
-    width: 7.5rem;
-    flex-direction: column;
-
-    & span:first-child {
-      margin-right: 0.3125rem;
-    }
-    &-first {
-      font-size: 0.75rem;
+    & svg {
+      fill: $white;
     }
 
-    &-second {
-      & span:last-child {
-        font-size: 0.75rem;
-      }
+    &_wrapper {
+      width: 2rem;
+      height: 100%;
     }
-  }
-
-  &_delete-btn {
-    margin-right: 20px;
   }
 }
 </style>

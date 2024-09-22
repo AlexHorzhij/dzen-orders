@@ -116,7 +116,7 @@ export default {
 
 .header {
   &_search {
-    width: 300px;
+    width: 18.75rem;
     background-color: var(--bg-light);
 
     &::placeholder {
@@ -136,7 +136,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 16px;
+      gap: 1rem;
 
       & > span {
         display: flex;
@@ -147,9 +147,9 @@ export default {
   }
 
   &_time_icon {
-    width: 14px;
-    height: 14px;
-    margin-right: 4px;
+    width: .875rem;
+    height: .875rem;
+    margin-right: .25rem;
   }
 
   &_weekDay {

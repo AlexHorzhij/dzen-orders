@@ -31,6 +31,7 @@
         </div>
       </div>
     </div>
+    <!-- <button @click="removeOrder(order.id)">REMOVE</button> -->
     <div class="order-card_delete-btn">
       <delete-button />
     </div>
@@ -72,8 +73,9 @@ export default {
   border-bottom: 0.0625rem solid $secondary_color;
 
   &:hover {
-    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-      0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    box-shadow: inset 0.0625rem 0 0 #dadce0, inset -0.0625rem 0 0 #dadce0,
+      0 0.0625rem 0.125rem 0 rgba(60, 64, 67, 0.3),
+      0 0.0625rem 0.1875rem 0.0625rem rgba(60, 64, 67, 0.15);
   }
 
   &_item {
@@ -120,7 +122,7 @@ export default {
   }
 
   &_count {
-    width: 120px;
+    width: 7.5rem;
     & > div {
       display: flex;
       align-items: center;
@@ -129,8 +131,8 @@ export default {
     }
 
     &-icon {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
       fill: $black;
     }
     &-products {
@@ -139,10 +141,10 @@ export default {
       align-items: center;
     }
     &-number {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
     &-text {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
   }
 
@@ -174,7 +176,7 @@ export default {
   }
 
   &_delete-btn {
-    margin-right: 20px;
+    margin-right: 1.25rem;
   }
 }
 </style>

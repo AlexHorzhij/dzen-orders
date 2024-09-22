@@ -137,8 +137,8 @@ export default {
   color: $secondary_text;
 
   &:hover {
-    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-      0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    box-shadow: inset .0625rem 0 0 #dadce0, inset -0.0625rem 0 0 #dadce0,
+      0 .0625rem .125rem 0 rgba(60, 64, 67, 0.3), 0 .0625rem .1875rem .0625rem rgba(60, 64, 67, 0.15);
   }
 
   &_status-marker {
@@ -194,9 +194,9 @@ export default {
         border-radius: 0.25rem;
         z-index: 100;
 
-        box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
-          0 1px 2px 0 rgba(60, 64, 67, 0.3),
-          0 1px 3px 1px rgba(60, 64, 67, 0.15);
+        box-shadow: inset .0625rem 0 0 #dadce0, inset -0.0625rem 0 0 #dadce0,
+          0 .0625rem .125rem 0 rgba(60, 64, 67, 0.3),
+          0 .0625rem .1875rem .0625rem rgba(60, 64, 67, 0.15);
       }
     }
   }

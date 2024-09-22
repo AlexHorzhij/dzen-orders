@@ -1,16 +1,5 @@
 <template>
   <div>
-    <!-- Button trigger modal -->
-    <!-- <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-    >
-      Launch demo modal
-    </button> -->
-
-    <!-- Modal -->
     <div
       class="modal fade"
       id="exampleModal"
@@ -43,9 +32,10 @@
               Отменить
             </button>
             <button
-              @click="$emit(order.id)"
+              @click="$emit('delete')"
               type="button"
               class="btn btn-primary"
+              data-bs-dismiss="modal"
             >
               Удалить
             </button>

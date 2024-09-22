@@ -24,11 +24,11 @@
   width: 2rem;
   height: 2rem;
   box-sizing: content-box;
-  border: 1px solid rgb(26, 184, 26);
+  border: 0.0625rem solid rgb(26, 184, 26);
   border-radius: 50%;
 
-  -webkit-box-shadow: 0px 0px 2px 2px rgb(34, 182, 34);
-  -moz-box-shadow: 0px 0px 2px 2px rgb(26, 184, 26);
-  box-shadow: 0px 0px 2px 2px rgb(25, 200, 25);
+  -webkit-box-shadow: 0rem 0rem 0.125rem 0.125rem rgb(34, 182, 34);
+  -moz-box-shadow: 0rem 0rem 0.125rem 0.125rem rgb(26, 184, 26);
+  box-shadow: 0rem 0rem 0.125rem 0.125rem rgb(25, 200, 25);
 }
 </style>

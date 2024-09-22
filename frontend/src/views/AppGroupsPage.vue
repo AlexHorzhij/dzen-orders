@@ -10,7 +10,7 @@
           :key="order.id"
           @click="showProducts(order.id)"
         >
-          <app-group-item :order="order" />
+          <app-group-item :order="order" :currentOrder="currentOrder" />
         </li>
       </ul>
       <router-view />
@@ -30,22 +30,33 @@ export default {
     return {
       orders: null,
       products: null,
+      currentOrder: null,
     };
   },
   setup() {
     const router = useRouter();
+    return { router };
+  },
+  methods: {
+    showProducts(order_id) {
+      this.currentOrder = order_id;
 
-    function showProducts(order_id) {
-      router.push({
+      this.router.push({
         name: "group_products",
         params: { id: order_id },
       });
-    }
-    return { showProducts };
+    },
   },
+
   created() {
     this.orders = this.$store.state.orders;
     this.products = this.$store.state.products;
+    this.currentOrder = this.orders[0].id;
+
+    this.router.push({
+      name: "group_products",
+      params: { id: this.currentOrder },
+    });
   },
 };
 </script>
@@ -65,7 +76,7 @@ export default {
 
     &_wrapper {
       display: flex;
-      gap: 40px;
+      gap: 2.5rem;
     }
   }
 }

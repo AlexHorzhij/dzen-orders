@@ -2,9 +2,13 @@
   <div class="orders">
     <h2 class="orders_title"><add-button /> Приходы / {{ orders?.length }}</h2>
     <ul v-if="orders" class="orders_list">
-      <li v-for="order of orders" :key="order.id" class="orders_item">
+      <li
+        v-for="order of this.$store.state.orders"
+        :key="order.id"
+        class="orders_item"
+      >
         <app-order-item :order="order" />
-        <app-delete-modal :order="order" />
+        <app-delete-modal :order="order" @delete="removeOrder(order.id)" />
       </li>
     </ul>
   </div>
@@ -19,16 +23,11 @@ export default {
   name: "AppOrdersPage",
   components: { AppOrderItem, AddButton, AppDeleteModal },
   data() {
-    return { orders: null };
-  },
-  created() {
-    this.orders = this.$store.state.orders;
+    return { orders: this.$store.state.orders };
   },
   methods: {
     removeOrder(id) {
-      this.$store.state.orders = this.$store.state.orders.filter(
-        (item) => item.id !== id
-      );
+      this.$store.commit("deleteOrder", id);
     },
   },
 };
@@ -41,7 +40,7 @@ export default {
     flex-direction: column;
     gap: 1rem;
     padding: 1.25rem 0;
-    overflow-x: scroll;
+    overflow-x: auto;
     width: 100%;
   }
 
@@ -51,7 +50,8 @@ export default {
   }
 
   &_item {
-    width: 100%;
+    width: fit-content;
+    flex-grow: 1;
   }
 }
 </style>

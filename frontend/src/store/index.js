@@ -9,14 +9,17 @@ const store = createStore({
   },
   mutations: {
     setOrders(state, payload) {
-      console.log("payload: ", payload);
       state.orders = payload;
     },
     deleteOrder(state, id) {
       state.orders = state.orders.filter((item) => item.id !== id);
+      state.products = state.products.filter((item) => item.order !== id);
     },
     setProducts(state, payload) {
       state.products = payload;
+    },
+    deleteProduct(state, id) {
+      state.products = state.products.filter((item) => item.id !== id);
     },
   },
 });
